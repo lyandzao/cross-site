@@ -1,0 +1,24 @@
+{
+  "scripts": {
+    "serve-proxy": "webpack-dev-server --open --config ./src/3-proxy+webpack/proxy.config.js",
+    "postMessage-father": "webpack-dev-server --open --config ./src/postMessage/config/father.config.js",
+    "postMessage-son": "webpack-dev-server --open --config ./src/postMessage/config/son.config.js",
+    "window-name-ab": "nodemon ./src/window.name+iframe/ab/ab.js",
+    "window-name-c": "nodemon ./src/window.name+iframe/c/c.js",
+    "location-hash-ab": "nodemon ./src/location.hash+iframe/ab/ab.js",
+    "location-hash-c": "nodemon ./src/location.hash+iframe/c/c.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.4.1",
+    "koa": "^2.10.0",
+    "koa-cors": "^0.0.16",
+    "koa-static": "^5.0.0",
+    "path": "^0.12.7",
+    "socket.io": "^2.3.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.9.0"
+  }
+}

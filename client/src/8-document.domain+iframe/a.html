@@ -1,0 +1,13 @@
+// a.html
+
+<body>
+  helloa
+  <iframe src="http://b.zao.cn:3000/b.html" frameborder="0" onload="load()" id="frame"></iframe>
+  <script>
+    document.domain = 'zao.cn'
+
+    function load() {
+      console.log(frame.contentWindow.a);
+    }
+  </script>
+</body>

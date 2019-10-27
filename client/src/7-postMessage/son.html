@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>son</title>
+  <style>
+    .comesFromFather {
+      border: 1px solid red;
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>来自father的消息：</div>
+  <div class="comesFromFather"></div>
+  <script>
+      window.onmessage = function (e) {
+        // console.log('son:'+e.data)
+        e.source.postMessage('给father的信息', e.origin);
+      const comesFromFather=document.querySelector('.comesFromFather')
+      comesFromFather.innerHTML=e.data      
+    };
+  </script>
+</body>
+
+</html>

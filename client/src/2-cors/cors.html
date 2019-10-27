@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>cors</title>
+    <script src="../../node_modules/axios/dist/axios.js"></script>
+  </head>
+
+  <body>
+    <button onclick="getData()">cors-get</button>
+    <button onclick="getDataP()">cors-post</button>
+  </body>
+  <script>
+    function getData() {
+      axios
+        .get('http://localhost:3000/get/testGet')
+        .then(s => {
+          console.log(s);
+        })
+        .catch(f => {
+          console.log(f);
+        });
+    }
+    function getDataP(){
+      axios
+      .post('http://localhost:3000/post/testPost')
+      .then(s => {
+      console.log(s);
+      })
+      .catch(f => {
+      console.log(f);
+      });
+    }
+  </script>
+</html>

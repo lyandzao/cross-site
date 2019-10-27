@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jsonp-jq</title>
+  <script src="../../node_modules/jquery/dist/jquery.js"></script>
+</head>
+
+<body>
+  <button onclick="getData()">jsonp-jq</button>
+</body>
+<script>
+  function getData() {
+    $.ajax({
+      url: 'http://localhost:3000/get/testjsonp',
+      type: 'get',
+      dataType: "jsonp",
+      data: {
+        "wd": "跨域成功"
+      },
+      jsonp: "callback",
+      success: function (res) {
+        console.log(res)
+      },
+      error: function () {
+        console.log('跨域失败')
+      }
+    })
+    $.ajax({
+      url: 'https://c.y.qq.com/splcloud/fcgi-bin/gethotkey.fcg?g_tk=956848664&loginUin=1064216064&hostUin=0&format=json&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq.json&needNewCode=0',
+      type: 'get',
+      dataType:'jsonp',
+      jsonp:'callback',
+      success: function (res) {
+        console.log(res)
+      },
+      error: function () {
+        console.log('跨域失败')
+      }
+    })
+
+  }
+ 
+</script>
+
+</html>

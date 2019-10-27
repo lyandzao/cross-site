@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>father</title>
+  <style>
+  .comesFromSon{
+    border: 1px solid red;
+    width: 200px;
+    height: 100px;
+  }
+  </style>
+</head>
+<body>
+    <div>来自son的回信：</div>
+    <div class="comesFromSon"></div>
+    <iframe src="http://localhost:1002/son.html" frameborder="1px" id="frame" onload="send()"></iframe>
+    <script>
+      function send(){
+         const frame = document.getElementById('frame')
+         const comesFromSon=document.querySelector('.comesFromSon')
+         frame.contentWindow.postMessage('给son的消息', 'http://localhost:1002')
+         window.onmessage = function (e) {
+          //  console.log('father:'+e.data)
+         comesFromSon.innerHTML=e.data
+         }
+      }
+    </script>
+</body>
+</html>

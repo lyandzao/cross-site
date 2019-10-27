@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jsonp</title>
+  <script src="./jsonp.js"></script>
+</head>
+
+<body>
+<button onclick="getData()">json</button>
+</body>
+<script>
+function getData(){
+  jsonp({
+    url:'http://localhost:3000/get/testjsonp',
+    params: { wd: '跨域成功' },
+    callback:'show'
+  }).then(res=>{
+    console.log(JSON.stringify(res))
+  })
+  jsonp({
+    url:'https://c.y.qq.com/splcloud/fcgi-bin/gethotkey.fcg?g_tk=956848664&loginUin=1064216064&hostUin=0&format=json&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq.json&needNewCode=0',
+    params:{key:'test'},
+    callback:'show2'
+  }).then(res=>{
+    console.log(JSON.stringify(res))
+  })
+}
+</script>
+
+</html>

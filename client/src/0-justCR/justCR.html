@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>justCR</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  const ajax = new XMLHttpRequest();
+  ajax.open('http://localhost:3000/get/testGet');
+  ajax.send();
+  ajax.onreadystatechange = function () {
+    if (ajax.readyState == 4 && ajax.status == 200) {
+      console.log(ajax.responseText);
+    }
+  }
+</script>
+
+</html>

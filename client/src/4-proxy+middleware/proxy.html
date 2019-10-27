@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../../node_modules/axios/dist/axios.js"></script>
+  <title>proxy</title>
+</head>
+
+<body>
+  <button onclick="getData1()">proxy-middleware1</button>
+  <button onclick="getData2()">proxy-middleware2</button>
+  <script>
+    function getData1() {
+      axios
+        .get('http://127.0.0.1:4000/get1/get/testGet')
+        .then(s => {
+          console.log(s);
+        })
+        .catch(f => {
+          console.log(f);
+        });
+    }
+    function getData2() {
+      axios
+        .get('http://127.0.0.1:4000/get2/get/testGet')
+        .then(s => {
+          console.log(s);
+        })
+        .catch(f => {
+          console.log(f);
+        });
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "serve-none": "nodemon -w src --exec \"babel-node ./src/serve.none.js --presets env\"",
+    "serve-none2": "nodemon -w src --exec \"babel-node ./src/serve.none2.js --presets env\"",
+    "serve-proxy": "nodemon -w src --exec \"babel-node ./src/serve.proxy.js --presets env\"",
+    "serve-jsonp": "nodemon -w src --exec \"babel-node ./src/serve.jsonp.js --presets env\"",
+    "serve-cors": "nodemon -w src --exec \"babel-node ./src/serve.cors.js --presets env\"",
+    "serve-websocket": "nodemon -w src --exec \"babel-node ./src/serve.websocket.js --presets env\"",
+    "build": "babel src -s -D -d dist --presets env"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "http-proxy-middleware": "^0.20.0",
+    "koa": "^2.10.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "koa-server-http-proxy": "^0.1.0",
+    "koa2-connect": "^1.0.2",
+    "socket.io": "^2.3.0",
+    "ws": "^7.2.0"
+  }
+}
